@@ -14,7 +14,7 @@ public class CourseController {
     @Autowired
     private CourseServiceImpl courseService;
 
-    // ✅ GET all courses
+    // GET all courses
     @GetMapping("/courses")
     public List<Course> getAllCourses() {
         //YOUR CODE STARTS HERE
@@ -22,7 +22,7 @@ public class CourseController {
         //YOUR CODE ENDS HERE
     }
 
-    // ✅ GET course by ID
+    //GET course by ID
     @GetMapping("/{id}")
     public Course getCourseById(@PathVariable int id) {
         //YOUR CODE STARTS HERE
@@ -30,7 +30,7 @@ public class CourseController {
         //YOUR CODE ENDS HERE
     }
 
-    // ✅ POST new course
+    // POST new course
     @PostMapping("/add")
     public Course addCourse(@RequestBody Course course) {
         //YOUR CODE STARTS HERE
@@ -38,7 +38,7 @@ public class CourseController {
         //YOUR CODE ENDS HERE
     }
 
-    // ✅ PUT (update) course
+    //PUT (update) course
     @PutMapping("/{id}")
     public Course updateCourse(@PathVariable int id, @RequestBody Course course) {
         //YOUR CODE STARTS HERE
@@ -46,7 +46,7 @@ public class CourseController {
         //YOUR CODE ENDS HERE
     }
 
-    // ✅ DELETE course
+    // DELETE course
     @DeleteMapping("/{id}")
     public void deleteCourse(@PathVariable int id) {
         //YOUR CODE STARTS HERE

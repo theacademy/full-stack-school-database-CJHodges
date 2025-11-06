@@ -23,6 +23,7 @@ public class StudentDaoImpl implements StudentDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
     @Override
     @Transactional
     public Student createNewStudent(Student student) {
@@ -43,6 +44,7 @@ public class StudentDaoImpl implements StudentDao {
         //YOUR CODE ENDS HERE
     }
 
+
     @Override
     public List<Student> getAllStudents() {
         //YOUR CODE STARTS HERE
@@ -50,6 +52,7 @@ public class StudentDaoImpl implements StudentDao {
         return jdbcTemplate.query(sql, new StudentMapper());
         //YOUR CODE ENDS HERE
     }
+
 
     @Override
     public Student findStudentById(int id) {
