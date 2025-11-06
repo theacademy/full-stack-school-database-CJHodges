@@ -10,69 +10,42 @@ import java.util.List;
 @RequestMapping("/student")
 @CrossOrigin
 public class StudentController {
+
     @Autowired
-    StudentServiceImpl studentServiceImpl;
+    private StudentServiceImpl studentServiceImpl;
 
     @GetMapping("/students")
     public List<Student> getAllStudents() {
-        //YOUR CODE STARTS HERE
-
-        return null;
-
-        //YOUR CODE ENDS HERE
+        return studentServiceImpl.getAllStudents();
     }
 
     @PostMapping("/add")
     public Student addStudent(@RequestBody Student student) {
-        //YOUR CODE STARTS HERE
-
-        return null;
-
-        //YOUR CODE ENDS HERE
+        return studentServiceImpl.addNewStudent(student);
     }
 
     @GetMapping("/{id}")
     public Student getStudentById(@PathVariable int id) {
-        //YOUR CODE STARTS HERE
-
-        return null;
-
-        //YOUR CODE ENDS HERE
+        return studentServiceImpl.getStudentById(id);
     }
 
     @PutMapping("/{id}")
     public Student updateStudent(@PathVariable int id, @RequestBody Student student) {
-        //YOUR CODE STARTS HERE
-
-        return null;
-
-        //YOUR CODE ENDS HERE
+        return studentServiceImpl.updateStudentData(id, student);
     }
 
     @DeleteMapping("/{id}")
     public void deleteStudent(@PathVariable int id) {
-        //YOUR CODE STARTS HERE
-
-
-
-        //YOUR CODE ENDS HERE
+        studentServiceImpl.deleteStudentById(id);
     }
 
     @DeleteMapping("/{studentId}/{courseId}")
     public void deleteStudentFromCourse(@PathVariable int studentId, @PathVariable int courseId) {
-        //YOUR CODE STARTS HERE
-
-
-
-        //YOUR CODE ENDS HERE
+        studentServiceImpl.deleteStudentFromCourse(studentId, courseId);
     }
 
     @PostMapping("/{studentId}/{courseId}")
     public void addStudentToCourse(@PathVariable int studentId, @PathVariable int courseId) {
-        //YOUR CODE STARTS HERE
-
-
-
-        //YOUR CODE ENDS HERE
+        studentServiceImpl.addStudentToCourse(studentId, courseId);
     }
 }

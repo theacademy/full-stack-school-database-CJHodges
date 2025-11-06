@@ -1,5 +1,7 @@
 package mthree.com.fullstackschool.model;
 
+import java.util.Objects;
+
 public class Student {
     private int studentId;
     private String studentFirstName;
@@ -7,6 +9,17 @@ public class Student {
 
     public int getStudentId() {
         return studentId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Student student)) return false;
+        return studentId == student.studentId && Objects.equals(studentFirstName, student.studentFirstName) && Objects.equals(studentLastName, student.studentLastName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(studentId, studentFirstName, studentLastName);
     }
 
     public void setStudentId(int studentId) {

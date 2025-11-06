@@ -87,10 +87,13 @@ public class CourseDaoImplTests {
     @Test
     @DisplayName("Delete All Students From Course")
     public void deleteAllStudentsFromCourseTest() {
+
         //Get number of students in course 7. (should be 4)
         String sql = "Select count(student_id) from course_student where course_id = 7";
         int studentCount = jdbcTemplate.queryForObject(sql, Integer.class);
         assertEquals(4, studentCount);
+
+        courseDao.deleteAllStudentsFromCourse(7);
         studentCount = jdbcTemplate.queryForObject(sql, Integer.class);
         assertEquals(0, studentCount);
     }
